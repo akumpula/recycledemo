@@ -9,3 +9,24 @@ class CreatePosts < ActiveRecord::Migration
     end
   end
 end
+
+class Listing < ActiveRecord::Base
+	belongs_to :name
+	belongs_to :description
+	belongs_to :price
+	belongs_to :room
+	belongs_to :age
+	has_many :colors
+end
+
+class Room < ActiveRecord::Base
+	has_many :listings
+
+end
+
+class Age < ActiveRecord::Base
+	has_many :listings
+end
+class Color < ActiveRecord::Base
+	has_many :listing
+end
