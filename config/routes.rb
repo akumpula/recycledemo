@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts
+  get 'pages/listings'
+
   get 'pages/about'
 
   get 'pages/contact'
