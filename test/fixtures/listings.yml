@@ -2,10 +2,12 @@
 
 one:
   name: MyString
-  description: MyText
-  price: 1
+  description: MyString
+  room_id: 1
+  age_id: 1
 
 two:
   name: MyString
-  description: MyText
-  price: 1
+  description: MyString
+  room_id: 1
+  age_id: 1

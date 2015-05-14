@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :listings
+  resources :listings
   get 'pages/listings'
 
   get 'pages/about'
