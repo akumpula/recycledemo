@@ -32,6 +32,10 @@
   <div class="field">
     <%= f.label :colors %><br>
     <%= collection_check_boxes(:listing, :color_ids, Color.all, :id, :name) %>
+      <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
