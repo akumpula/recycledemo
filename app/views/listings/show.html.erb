@@ -15,8 +15,8 @@
 	<%= @listing.Price %>
 </p>
 <p>
-<% image_tag @listing.photo.url %>
-<% image_tag @listing.photo.url(:medium) %>
+<%= image_tag @listing.photo.url %>
+<%= image_tag @listing.photo.url(:medium) %>
 <%= image_tag @listing.photo.url(:thumb) %>
 </p>
 

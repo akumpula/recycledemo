@@ -1,3 +1,16 @@
 // Place all the styles related to the Listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+
+.hero_homepage h1 {
+	font-family: 'Raleway', serif;
+	font-weight: 800;
+	font-size: 100px;
+	position: absolute;
+	padding-left: 250px;
+	padding-top:100px;
+	
+}
