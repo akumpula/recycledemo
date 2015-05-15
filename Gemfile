@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'cloudinary'
 gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.3.4'

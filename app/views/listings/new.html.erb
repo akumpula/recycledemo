@@ -3,3 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', listings_path %>
+
+<%= form_for @listing, :url => listings_path, :html => { :multipart => true } do |form| %>
+<% end %>

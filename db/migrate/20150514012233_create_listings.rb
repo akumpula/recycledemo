@@ -6,6 +6,7 @@ class CreateListings < ActiveRecord::Migration
       t.integer :Price
       t.integer :room_id
       t.integer :age_id
+      t.image :picture
 
       t.timestamps null: false
     end
