@@ -5,4 +5,12 @@ class Listing < ActiveRecord::Base
     validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 	has_many :colorings
 	has_many :colors, through: :colorings
+def self.search(search)
+  if search.present?
+    where('name LIKE ?', "%#{search}%")
+  else
+    where(true)
+  end
+end
+
 end

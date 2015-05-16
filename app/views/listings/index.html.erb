@@ -1,15 +1,29 @@
 <p id="notice"><%= notice %></p>
-
-
-<div class="hero_homepage">
-  <h1>Listings</h1>
+<div class="hero">
+  <div class="container-fluid"><a href="/listings">
+    <h1 class="hero_header">Re.cycle It</h1>
+    <h4>Buy & Sell furniture in your city</h4>
+      <img src="http://res.cloudinary.com/re-cycle-it/image/upload/o_100/v1431746110/chairs_krdvwu.jpg" class="img-responsive"></a>
+  </div>
 </div>
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="search">
+      <h2>Find furniture</h2>
+      <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Listings" %>
+<%= submit_tag "Search" %>
+<% end %>
+    </div>
+  </div>
+      <% @listings.each do |listing| %>
     <div class="col-xs-6 col-sm-3">
-      <div id="photo_outline">
-    <% @listings.each do |listing| %>
-    <%= image_tag listing.photo.url(:thumb) %>
-        <div id="title">
-      <%= listing.name %>
+      <div class="photo-outline">
+        <div class="picture">
+    <a href="<%= edit_listing_path(listing) %>"><%= image_tag listing.photo.url(:medium) %></a>
+  </div>
+        <div class="title">
+      <%= listing.name %><br>
       <%= listing.Price %>
         </div>
       </div>

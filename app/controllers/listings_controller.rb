@@ -5,7 +5,12 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+    if params[:search]
+    @listings = Listing.search(params[:search])
+  else
+    @listings = Listing.all
   end
+end
 
   # GET /listings/1
   # GET /listings/1.json
@@ -66,6 +71,7 @@ class ListingsController < ApplicationController
     def set_listing
       @listing = Listing.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
