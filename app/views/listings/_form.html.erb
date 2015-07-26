@@ -2,45 +2,58 @@
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
       <ul>
-      <% @listing.errors.full_messages.each do |message| %>
+        <% @listing.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :room_id %><br>
-    <%= f.select :room_id,
-    options_from_collection_for_select(Room.all, :id, :name, @listing.room_id) %>
+    <%= f.select(:room_id,
+    options_from_collection_for_select(Room.all, :id, :name, @listing.room_id), {}, { :class => 'form-control' }) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :age_id %><br>
-    <%= f.select :age_id,
-    options_from_collection_for_select(Age.all, :id, :name, @listing.age_id) %>
+    <%= f.select(:age_id,
+    options_from_collection_for_select(Age.all, :id, :name, @listing.age_id), {}, { :class => 'form-control' }) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :colors %><br>
-    <%= collection_check_boxes(:listing, :color_ids, Color.all, :id, :name) %>
-      <div class="field">
-    <%= f.label :Price %><br>
-    <%= f.text_field :Price %>
+    <label ="checkbox">
+    <%= collection_check_boxes(:listing, :color_ids, Color.all, :id, :name) do |b| %>
+    <div class="row">
+      <%= b.label(class: "checkbox") do %>
+      <div class="col-xs-4">
+        <%= b.check_box(class: "check_box") %>
+      </div>
+      <div class="col-xs-8">
+        <%= b.object.name %>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+    </label>
   </div>
-  <div class="field">Upload Image
+  <div class="form-group">
+    <%= f.label :Price %><br>
+    <%= f.text_field :Price, class: "form-control" %>
+  </div>
+  <div class="form-group">Upload Image
     <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
+    <%= f.file_field :photo, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
