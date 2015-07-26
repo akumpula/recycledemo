@@ -9,14 +9,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="container">
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description, class: "form-control" %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :room_id %><br>
@@ -55,5 +55,6 @@
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
-  </div>
+</div>
+</div>
 <% end %>
